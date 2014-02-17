@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  
+  <macro name="model_torso" params="parent name *origin">
+    
+    <joint name="${parent}_${name}_base_joint" type="fixed">
+      <insert_block name="origin"/>
+      <parent link="${parent}_link"/>
+      <child link="${name}_link"/>
+    </joint>
+    
+    <link name="${name}_link">
+      <visual>
+	<geometry>
+	  <mesh filename="package://uibk_robot/meshes/torso.dae"/>
+	</geometry>
+	<material name="Silver"/>
+      </visual>
+      <!-- take collision mesh with some extra padding at the dangerous parts -->
+      <collision>
+	<geometry>
+	  <mesh filename="package://uibk_robot/meshes/torso_convex.stl"/>
+	</geometry>
+      </collision>
+      
+<!--  add collision model for torso and add some padding to the reachable parts to deal with self collision problem    
+      This would be the nicer solution but it doesn't work (don't know why - maybe this bug is fixed in the hydro version...)
+      <collision name="col1">
+	<origin xyz="-0.04 0 0.64" rpy="0 0 -${M_PI/2}" />
+	<geometry>
+	  <box size="${0.12 + 2*padding} ${0.16 + 2*padding} 1.20" />
+	</geometry>
+      </collision>
+      <collision name="col2">
+	<origin xyz="-0.04 0.3242 0.3462" rpy="0 ${M_PI/4} -${M_PI/2}" />
+	<geometry>
+	  <box size="${0.04 + 2*padding} ${0.08 + 2*padding} 0.71" />
+	</geometry>
+      </collision>
+      <collision name="col3">
+	<origin xyz="-0.04 -0.3242 0.3462" rpy="0 -${M_PI/4} -${M_PI/2}" />
+	<geometry>
+	  <box size="${0.04 + 2*padding} ${0.08 + 2*padding} 0.71" />
+	</geometry>
+      </collision>
+-->
+    </link>
+
+  </macro>
+
+</robot>

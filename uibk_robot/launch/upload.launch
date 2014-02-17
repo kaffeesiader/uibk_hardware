@@ -1,0 +1,6 @@
+<launch>
+
+  <arg name="file_name" default="model_assembled.xacro" />
+  <param name="robot_description" command="$(find xacro)/xacro.py '$(find uibk_robot)/urdf/$(arg file_name)'" />
+
+</launch>

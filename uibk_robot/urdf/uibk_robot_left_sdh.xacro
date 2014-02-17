@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="uibk_robot">
+       
+  <xacro:include filename="materials.urdf"/>
+  <xacro:include filename="torso.xacro"/>
+  <xacro:include filename="table.xacro"/>
+  <xacro:include filename="kuka_lwr_arm_defs.xacro"/>
+  <xacro:include filename="sdh_with_connector.xacro"/>
+  <xacro:include filename="dummy_eef.xacro"/>
+  
+  <!-- draw a small cross to visualize the origin of the world reference frame -->
+  <link name="world_link">
+    <visual>
+      <geometry>
+	<box size="0.03 0.005 0.001" />
+	<material name="Black" />
+      </geometry>
+    </visual>
+    <visual>
+      <geometry>
+	<box size="0.005 0.03 0.001" />
+	<material name="Black" />
+      </geometry>
+    </visual>
+  </link>
+  
+  <!-- draw the table relative to the origin -->
+  <xacro:model_table name="table" 
+		     parent="world"
+		     length="2.22"
+		     width="0.8"
+		     height="0.734"
+		     plate_thickness="0.03">
+		     
+    <origin xyz="-0.029 -0.3 0" rpy="0 0 1.5708"/>
+    
+  </xacro:model_table>
+  
+  <!-- add torso -->
+  <xacro:model_torso name="torso" parent="world">
+    <origin xyz="-0.4723 0.6767 -0.734"/>
+  </xacro:model_torso>
+  
+  <!-- left arm with gripper -->
+  <xacro:kuka_lwr_arm parent="world" name="left" right="-1">
+    <origin xyz="-0.4923 0.7541 0.6295" 
+	    rpy="1.9485 -0.2114 2.6898"/>
+  </xacro:kuka_lwr_arm>
+  
+  <xacro:sdh_with_connector parent="left_arm_7_link" name="left_sdh">
+    <origin rpy="0 0 ${-1/2 * M_PI}"/>
+  </xacro:sdh_with_connector>
+  
+  <!-- right arm with dummy eef -->
+  <xacro:kuka_lwr_arm parent="world" name="right" right="1">
+    <origin xyz="-0.4962 0.5992 0.6335" 
+	    rpy="-2.0628 0.7628 -3.1287"/>
+  </xacro:kuka_lwr_arm>
+  
+  <xacro:dummy_eef parent="right_arm_7_link" name="right_eef">
+    <origin rpy="0 0 0"/>
+  </xacro:dummy_eef>
+  
+</robot>

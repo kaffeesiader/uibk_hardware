@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" 
+       name="kuka_lwr_assembled">
+       
+  <xacro:include filename="materials.urdf"/>
+  <xacro:include filename="torso.xacro"/>
+  <xacro:include filename="table.xacro"/>
+  <xacro:include filename="kuka_lwr_arm_defs.xacro"/>
+  <xacro:include filename="$(find schunk_description)/urdf/sdh/sdh.urdf.xacro" />
+  
+  <!-- draw a small cross as visual to indicate the current origin -->
+  <link name="world_link">
+    <visual>
+      <geometry>
+	<box size="0.03 0.005 0.001" />
+	<material name="Black" />
+      </geometry>
+    </visual>
+    <visual>
+      <geometry>
+	<box size="0.005 0.03 0.001" />
+	<material name="Black" />
+      </geometry>
+    </visual>
+  </link>
+  
+  <xacro:model_table name="table" 
+		     parent="world"
+		     length="2.22"
+		     width="0.8"
+		     height="0.734"
+		     plate_thickness="0.1">
+		     
+    <origin xyz="-0.029 -0.3 0" rpy="0 0 1.5708"/>
+    
+  </xacro:model_table>
+
+  <xacro:model_torso name="torso" parent="world">
+    <origin xyz="-0.4723 0.6767 -0.734"/>
+  </xacro:model_torso>
+  
+  <!-- left arm with gripper -->
+  <xacro:kuka_lwr_arm parent="world" name="left" right="-1">
+    <origin xyz="-0.4923 0.7541 0.6295" 
+	    rpy="1.9485 -0.2114 2.6898"/>
+  </xacro:kuka_lwr_arm>
+  
+  <!-- joint between arm_7_link and the connector ring -->
+  <joint name="leftGripper_connector_joint" type="fixed" >
+	  <origin xyz="0 0 0" />
+	  <parent link="left_arm_7_link" />
+	  <child link="leftGripper_connector_link" />
+  </joint>
+  
+  <!-- connector ring added to adjust distance to arm connector -->
+  <link name="leftGripper_connector_link">
+	  <visual>
+		  <origin xyz="0 0 0.0084" rpy="0 0 0" />
+		  <geometry>
+			  <cylinder radius="0.02735" length="0.0168" />
+		  </geometry>
+		  <material name="DarkGrey" />
+	  </visual>
+	  
+	  <collision>
+		  <origin xyz="0 0 0.0084" rpy="0 0 0" />
+		  <geometry>
+			  <cylinder radius="0.02735" length="0.0168" />
+		  </geometry>
+	  </collision>
+  </link>
+  
+  <xacro:schunk_sdh parent="left_arm_7_link" name="leftGripper">
+    <origin xyz="0 0 0.0168" rpy="0 0 ${-1/2 * M_PI}"/>
+  </xacro:schunk_sdh>
+  
+  <!-- right arm with gripper -->
+  <xacro:kuka_lwr_arm parent="world" name="right" right="1">
+    <origin xyz="-0.4962 0.5992 0.6335" 
+	    rpy="-2.0628 0.7628 -3.1287"/>
+  </xacro:kuka_lwr_arm>
+  
+  <!-- joint between arm_7_link and the connector ring -->
+  <joint name="rightGripper_connector_joint" type="fixed" >
+	  <origin xyz="0 0 0" />
+	  <parent link="right_arm_7_link" />
+	  <child link="rightGripper_connector_link" />
+  </joint>
+  
+  <!-- connector ring added to adjust distance to arm connector -->
+  <link name="rightGripper_connector_link">
+	  <visual>
+		  <origin xyz="0 0 0.0084" rpy="0 0 0" />
+		  <geometry>
+			  <cylinder radius="0.02735" length="0.0168" />
+		  </geometry>
+		  <material name="DarkGrey" />
+	  </visual>
+	  
+	  <collision>
+		  <origin xyz="0 0 0.0084" rpy="0 0 0" />
+		  <geometry>
+			  <cylinder radius="0.02735" length="0.0168" />
+		  </geometry>
+	  </collision>
+  </link>
+  
+  <xacro:schunk_sdh parent="rightGripper_connector_link" name="rightGripper">
+    <origin xyz="0 0 0.0168" rpy="0 0 ${1/2 * M_PI}"/>
+  </xacro:schunk_sdh>
+  
+</robot>
