@@ -58,6 +58,27 @@
 		</collision>
       
     </link>
+    
+    <joint name="${name}_surface_joint" type="fixed">
+      <origin xyz="0.171 0.81 0.045"/>
+      <parent link="${parent}_link"/>
+      <child link="${name}_surface_link"/>
+    </joint>
+    
+    <link name="${name}_surface_link">
+		<visual>
+		    <geometry>
+			    <box size="1.2 2.3 0.09"/>
+		    </geometry>
+		    <material name="LightGrey"/>
+		</visual>
+		
+		<collision>
+		    <geometry>
+			    <box size="1.25 2.35 0.1"/>
+		    </geometry>
+		</collision>
+    </link>
 
     <xacro:table_leg parent="${name}_plate_link" name="leg_0">
       <origin xyz="${border_offset} -${border_offset} -${1/2 * (plate_thickness + height)}"/>

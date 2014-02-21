@@ -1,6 +1,6 @@
 <launch>
 	<arg name="gui" default="False" />
-	<arg name="file_name" default="model_assembled.xacro" />
+	<arg name="file_name" default="uibk_robot_table.xacro" />
 	
 	<include file="$(find uibk_robot)/launch/upload.launch">
 	  <arg name="file_name" value="$(arg file_name)" />
