@@ -183,6 +183,26 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+        leg_0_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        leg_1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        leg_2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        leg_3_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         right_arm_1_link:
           Alpha: 1
           Show Axes: false
@@ -219,6 +239,74 @@ Visualization Manager:
           Show Trail: false
           Value: true
         right_arm_base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_sdh_connector_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_sdh_finger_11_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_sdh_finger_12_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_sdh_finger_13_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_sdh_finger_21_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_sdh_finger_22_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_sdh_finger_23_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_sdh_grasp_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_sdh_palm_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_sdh_thumb_1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_sdh_thumb_2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_sdh_thumb_3_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_sdh_tip_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        table_plate_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -360,6 +448,26 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+        leg_0_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        leg_1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        leg_2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        leg_3_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         right_arm_1_link:
           Alpha: 1
           Show Axes: false
@@ -396,6 +504,74 @@ Visualization Manager:
           Show Trail: false
           Value: true
         right_arm_base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_sdh_connector_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_sdh_finger_11_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_sdh_finger_12_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_sdh_finger_13_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_sdh_finger_21_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_sdh_finger_22_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_sdh_finger_23_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_sdh_grasp_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_sdh_palm_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_sdh_thumb_1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_sdh_thumb_2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_sdh_thumb_3_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_sdh_tip_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        table_plate_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -471,15 +647,15 @@ Visualization Manager:
       Class: rviz/XYOrbit
       Distance: 1.25979
       Focal Point:
-        X: -0.0238462
-        Y: 0.0304692
-        Z: 0
+        X: 0.84795
+        Y: 0.066277
+        Z: -5.96046e-08
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: -0.2446
+      Pitch: 0.2754
       Target Frame: <Fixed Frame>
       Value: XYOrbit (rviz)
-      Yaw: 5.04675
+      Yaw: 5.85675
     Saved: ~
 Window Geometry:
   Displays:
