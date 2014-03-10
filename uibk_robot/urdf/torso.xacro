@@ -19,7 +19,7 @@
       <!-- take collision mesh with some extra padding at the dangerous parts -->
       <collision>
 	<geometry>
-	  <mesh filename="package://uibk_robot/meshes/torso_convex.stl"/>
+	  <mesh filename="package://uibk_robot/meshes/torso_convex2.stl"/>
 	</geometry>
       </collision>
       
