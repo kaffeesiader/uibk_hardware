@@ -1,0 +1,20 @@
+<package>
+  <name>uibk_hardware</name>
+  <version>0.0.0</version>
+  <description>
+    ROS meta-package containing uibk_hardware.
+  </description>
+  <maintainer email="martin.griesser@student.uibk.ac.at">Martin Griesser</maintainer>
+  <license>GPLv2</license>
+  
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>schunk_description</run_depend>
+  <run_depend>kit_head_description</run_depend>
+  <run_depend>uibk_robot</run_depend>
+  <run_depend>lwr</run_depend>
+
+  <export>
+    <metapackage/>
+  </export>
+</package>
